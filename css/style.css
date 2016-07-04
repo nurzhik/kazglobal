@@ -1,8 +1,7 @@
 
-
 /* font-family: "HelveticaNeueCyr-Bold" */
 @font-face {
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     src: url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.eot");
     src: url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.eot?#iefix")format("embedded-opentype"),
     url("../fonts/HelveticaNeueCyr-Bold/HelveticaNeueCyr-Bold.woff") format("woff"),
@@ -180,21 +179,69 @@ body{
 }
 .menu_top {
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
     float: none;
     text-transform: uppercase;
 }
 .menu_top a{
     color:#fff;
 }
-.menu_top a:hover {
-    box-shadow: 0 28px 30px -3px #fff,0 -28px 30px -3px #fff;
+.menu_top li {
+    position: relative;
+    padding: 0 25px;
+}
+.menu_top > li:hover:before,.menu_top > li:hover:after {
+  display: block;
+}
+.menu_top li:before {
+    /* background-image: url(../img/hover_menu.png); */
+    background: -webkit-radial-gradient(30px 20px, circle farthest-side, #fff, #000);
+    background: -webkit-radial-gradient(50% -2px, farthest-side, #fff, #008cba);
+    content: " ";
+    height: 8px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0px;
+    border-radius: 7px 7px 7px 7px;
+    left: 0;
+     display: none;
+}
+.menu_top li:after {
+    display: none;
+    background: -webkit-radial-gradient(30px 20px, circle farthest-side, #fff, #000);
+    background: -webkit-radial-gradient(50% 12px, farthest-side, rgba(255, 255, 255, 0.67), rgba(0, 140, 186, 0));
+    content: " ";
+    height: 8px;
+    width: 100%;
+    display: block;
+    position: absolute;
+    bottom: 0px;
+     display: none;
+    border-radius: 7px 7px 7px 7px;
+    left: 0;
+}
+.sub_menu_container{
+    position: absolute;
+    left: -26px;
+    white-space: nowrap;
+}
+.sub_menu {
+    padding: 0;
+    margin: 0;
+    background: #008cba;
+    margin-top: 1px;
+    list-style: none;
 }
 .big_img {
     background: url(../img/big_background.jpg);
     background-position: top center;
     padding: 14.2% 0;
     margin-bottom: 17px;
+}
+
+.sub_menu li:hover a{
+    text-decoration: none;
 }
 .button {
     padding: 0 20px;
@@ -205,9 +252,10 @@ body{
     font-size: 14px;
     border-radius: 5px;
     color: #fff;
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     outline: none;
     text-decoration: none;
+    font-weight: bold;
     position: relative;
     border-bottom: 2px solid #334a62;
 }
@@ -258,7 +306,7 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
 .title_news {
     color: #535353;
     font-size: 24px;
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     text-align: center;
     margin-bottom: 25px;
 }
@@ -295,7 +343,7 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
     margin-bottom: 0px;
 }
 .developed_compani {
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     color: #fff;
     text-align: right;
     margin-bottom: 15px;
@@ -306,6 +354,7 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
     list-style: none;
     float: left;
     width: 17%;
+    padding-top: 5px;
 }
 .side_bar_list_item {
     padding: 0 7px;
@@ -319,7 +368,7 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
 }
 .side_bar_list_item_link {
     color: #434343;
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     font-size: 14px;
     position: relative;
     padding-left: 25px;
@@ -367,16 +416,16 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
     padding-top: 40px;
 }
 .title {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     overflow: hidden;
 }
-.title h1{
+.title h1 {
     font-family: "Roman";
     font-weight: normal;
-    font-size: 1.9em;
+    font-size: 30px;
     color: #554d42;
     margin: 0;
-    float:left;
+    float: left;
     padding: 0;
 }
 .content_body {
@@ -494,7 +543,7 @@ select.input_filtr {
     width: 23%;
 }
 .ostatok {
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     color: #537599;
     font-size: 18px;
     margin-bottom: 10px;
@@ -503,7 +552,7 @@ select.input_filtr {
     text-align: right;
 }
 .bonus {
-    font-family: "HelveticaBold";
+    font-family: "HelveticaNeueCyr-Bold";
     color: #399800;
     font-size: 16px;
 }
@@ -526,22 +575,31 @@ select.input_filtr {
     overflow: hidden;
     border: 1px solid #acacac;
     margin-bottom: 25px;
+    text-align: center;
+}
+.registr_form_button {
+    display: inline-block;
+    /* margin: 0 auto; */
+    width: 44%;
 }
 .enter_form_container {
     width: 50%;
     float: left;
+    text-align: left;
 }
 .register__link_container {
-    width: 50%;
-    float: left;
-}
-.register__link {
+    width: 49.5%;
     float: left;
     border-left: 1px solid #acacac;
-    padding-left: 42px;
+}
+.register__link {
     padding-bottom: 30px;
     overflow: hidden;
+    width: 90%;
+    float: right;
+    text-align: left;
 }
+
 .enter_form .title, .register__link .title {
     float: none;
     font-family: "Roman";
@@ -556,8 +614,8 @@ select.input_filtr {
     color: #554d42;
     font-family: "Roman";
     font-size: 16px;
-    margin: 0;
     margin: 5px 0;
+    text-align: left;
 }
 .input_enter_container {
     margin-top: 15px;
@@ -592,3 +650,134 @@ select.input_filtr {
 }
 /* required comment for clearfix to work in Opera \*/
 
+/*regist client*/
+.register__link .input_registar {
+    width: 100%;
+}
+.input_registar {
+    padding: 0;
+    margin: 0;
+    line-height: 30px;
+    border: 1px solid #b1b1b1;
+    text-indent: 15px;
+    width: 90%;
+}
+.registr_form_button {
+    display: inline-block;
+    margin: 0 auto;
+    width: 44%;
+    margin-top: 15px;
+    margin-bottom: 35px;
+}
+.registr_form_button .input_registar{
+	width: 100%;
+}
+/*registr client end*/
+/*regist nastroika*/
+.nastroiki_registra_cabinet {
+    width: 48%;
+    margin-bottom: 25px;
+}
+.nastroiki_body {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: flex-start;
+    display: flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    ms-flex-align: start;
+    ms-flex-pack: justify;
+    ms-flex-wrap: wrap;
+    webkit-align-items: flex-start;
+    webkit-box-align: start;
+    webkit-box-pack: justify;
+    webkit-flex-wrap: wrap;
+    webkit-justify-content: space-between;
+    float: left;
+    font-family: "Roman";
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+/*registr nastroika end*/
+/*add person*/
+.status_person {
+    font-family: "HelveticaNeueCyr-Bold";
+    font-size: 16px;
+    color: #3f3f3f;
+    margin-bottom: 10px;
+    display: block;
+}
+.add_preson {
+    width: 20%;
+    float: left;
+    margin-right: 25px;
+    margin-bottom: 15px;
+}
+.add_person_form {
+    overflow: hidden;
+    margin-bottom: 35px;
+}
+.operacy.zaiavki tr td {
+    padding: 0;
+}
+.operacy.zaiavki {
+    width: 100%;
+}
+.operacy.zaiavki tr td label {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin: 0 5px;
+    position: relative;
+}
+.yes{
+    background-image: url(../img/yes.png);
+}
+.no{
+    background-image: url(../img/no.png);
+}
+.operacy.zaiavki tr td:last-child{
+    background-color: #008cba;
+    border-left: 1px solid #fff;
+    text-align: center;
+}
+.operacy.zaiavki tr td label:after {
+        content: attr(data-title);
+    display: none;
+    position: absolute;
+    background: #fff;
+    line-height: 18px;
+    font-size: 12px;
+    height: 18px;
+    z-index: 99;
+    padding: 0 5px;
+    top: -4px;
+    left: 12px;
+}
+.operacy.zaiavki tr td label:hover{
+    cursor: pointer;
+}
+.no:hover{
+    background-image: url(../img/no_hover.png)
+}
+.yes:hover{
+    background-image: url(../img/yes_hover.png)
+}
+.operacy.zaiavki tr td label:hover:after { 
+ content: attr(data-title); 
+ display: block;
+ cursor: pointer;
+}
+
+/*add person end*/
+@media screen and (max-width: 1100px){
+	.cr{
+		width: auto;
+		padding:0 15px;
+	}
+}
