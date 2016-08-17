@@ -8,7 +8,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-2.1.4.js"></script>
 <link href="css/normalize.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
-<link href="css/date.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="css/slide.css">
 <link rel="stylesheet" href="css/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
 <script type="text/javascript" src="js/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -16,6 +15,8 @@
 <script src="js/i18n/jquery.ui.datepicker-ru.js" type="text/javascript"></script>
 <script src="js/jquery.datepicker.extension.range.min.js" type="text/javascript"></script>
 <script src="js/app.js" type="text/javascript"></script>
+<script src="js/jquery_ui.js" type="text/javascript"></script>
+
 <!--[if lte IE 9]>
 <link rel="stylesheet" type="text/css" media="Screen" href="css/main-ie6.css">
 <script type="text/javascript" src="/js/ie6-fix.js"></script>
@@ -27,6 +28,7 @@
 	<div class="page">
 		<header class="top_head">
 			<div class="top_line">
+
 				<div class="cr">
 					<div class="enter_registr_container">
 						<a href="" class="enter">Войти</a>
@@ -92,7 +94,202 @@
 		<div class="container">
 			<div class="content">
 				<div class="cr">
-					
+					<div class="search_container">
+						<div class="search_head">
+							Поиск авиабилетов
+						</div>
+						<div class="search_body">
+							<div class="search_input_container city_container before_icon">
+								<input type="text" placeholder="Город вылета?" class="search_input"/>
+							</div>
+							<div class="search_input_container city_container">
+								<input type="text" placeholder="Город прилета?" class="search_input"/>
+							</div>
+							<div class="search_input_container  date_search before_icon">
+								<input type="text" placeholder="Дата вылета?" class="search_input"/>
+							</div>
+							<div class="search_input_container date_search ">
+								<input type="text" placeholder="Дата возвращения?" class="search_input"/>
+							</div>
+							<div class="search_col_container  ">
+								<div class="search_col">
+									<label for="">Взрослых</label>
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+									</select>
+								</div>
+								<div class="search_col">
+									<label for="">До 12, 14 лет</label>
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+									</select>
+								</div>
+								<div class="search_col">
+									<label for="">До 2 лет</label>
+									<select name="" id="">
+										<option value="">1</option>
+										<option value="">2</option>
+										<option value="">3</option>
+									</select>
+								</div>
+							</div>
+							<div class="search_napravlenie_container ">
+								<div class="search_napravlenie">
+									
+									<input type="radio" class="radio " name="napravlenie" id="radio">
+									<label for="radio">Туда и обратно</label>
+								</div>
+								<div class="search_napravlenie">
+									
+									<input type="radio" class="radio" name="napravlenie" id="radio2">
+									<label for="radio2">В одну сторону</label>
+								</div>
+							</div>
+							<div class="data_broni">
+								<input type="checkbox" class="radio date_bron" name="date_bron" id="radio3">
+									<label for="radio3">Свободные даты бронирования</label>
+									<span> (-/+ 3 дня)</span>
+							</div>
+							
+							<button class="button_ticket search_button">Найти</button>
+						</div>
+					</div>	
+					<div class="result_container">
+		
+						<div class="filtr_result">
+							<div class="filtr_result head">
+								<select name="" id="">
+									<option value="">Сортировка</option>
+								</select>
+							</div>
+							<div id="time-range">
+							    <p> Время вылета туда:<span class="slider-time">10:00 </span>  <span class="slider-time2">23:59 </span>
+
+							    </p>
+							    <div class="sliders_step1">
+							        <div id="slider-range"></div>
+							    </div>
+							</div>
+							<div id="time-range2">
+							    <p>Время вылета обратно: <span class="slider-time3">10:00 </span>  <span class="slider-time4">23:59 </span>
+
+							    </p>
+							    <div class="sliders_step2">
+							        <div id="slider-range2"></div>
+							    </div>
+							</div>
+							<div id="time-range3">
+							    <p >Время стыковки:<span class="slider-time5">10:00 </span>  <span class="slider-time6">23:59 </span>
+
+							    </p>
+							    <div class="sliders_step3">
+							        <div id="slider-range3"></div>
+							    </div>
+							</div>
+							<div class="priamie_reisi">
+								<input id="priamie_reisi" type="checkbox">
+								<label for="priamie_reisi">Только прямые рейсы</label>
+							</div>
+						</div>
+						<div class="result_body">
+							<div class="result head">
+								<p>Авиакомпания  </p>
+								<p>Рейс  </p>
+								<p>Выбор времени </p>
+								<p>Вылет - посадка </p>
+								<p> Время в пути</p>
+								<p>Детали</p>
+							</div>
+							<div class="result_item">
+								<div class="aviacompania_logo">
+										<div class="aviacompania_logo_head mobile">Авиакомпания</div>
+									<img src="img/air_astana.png" alt="">
+								</div>
+								<div class="flight">
+									<div class="flight_head mobile">Рейс</div>
+									через Усть-Каменогорск
+								</div>
+								<div class="drugoe_vremia">
+									<div class="drugoe_vremia_head mobile">Выбор времени</div>
+									Выбрать другое время
+								</div>
+								<div class="vilet_posadka">
+									<div class="vilet_posadka_head mobile">
+										Вылет - посадка
+									</div>
+									<p class="time_vilet">
+										<span>14:00</span>
+										15:55
+									</p>
+									<p class="time_prilet">
+										<span>14:00</span>
+										15:55
+									</p>
+								</div>
+								<div class="vrenia_poleta">
+									<div class="vremia_poleta_head mobile">
+										 Время в пути
+									</div>
+									<p>1ч 35м</p>
+									<p>1ч 30м</p>
+								</div>
+								<div class="detali">
+									<div class="detali_head mobile">Детали</div>
+									<p>Flight1 KC 856 Airbus Industrie A319
+Эконом-класс (L)</p>
+<p>Flight1 DV 703 Boeing 757-300
+Эконом-класс (R)</p>
+								</div>
+								<a href="" class="button_ticket">
+									Купить за 57 518 KZT
+								</a>
+								<div class="other_item_container">
+									<div class="other_item tuda">
+										<div class="other_item_head">
+											<div class="other_head_item">
+												13 августа
+											</div>
+											<div class="other_head_item">
+												Астана (Астана)  -  Алматы (Алматы) 
+											</div>
+											<div class="other_head_item">
+												Багаж: 20 KG
+											</div>
+										</div>
+										<a href="" class="other_mesto_button">
+											19:00 - 20:40  4 мест
+										</a>
+										<a href="" class="other_mesto_button">
+											19:00 - 20:40  4 мест
+										</a>
+									</div>
+									<div class="other_item nazad">
+										<div class="other_item_head">
+											<div class="other_head_item">
+												13 августа
+											</div>
+											<div class="other_head_item">
+												Астана (Астана)  -  Алматы (Алматы) 
+											</div>
+											<div class="other_head_item">
+												Багаж: 20 KG
+											</div>
+										</div>
+										<a href="" class="other_mesto_button">
+											19:00 - 20:40  4 мест
+										</a>
+										<a href="" class="other_mesto_button">
+											19:00 - 20:40  4 мест
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>	
 				</div>
 			</div>
 		</div>

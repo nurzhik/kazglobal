@@ -51,13 +51,28 @@ jQuery(document).ready(function ($) {
             settings: {
                 arrows: true,
                 centerMode: true,
+                slidesToShow: 3,
+            }
+        },
+        {
+              breakpoint: 768,
+            	settings: {
+                arrows: true,
+                centerMode: true,
+                slidesToShow: 2,
+            }
+
+        },
+         {
+              breakpoint: 460,
+            	settings: {
+                arrows: true,
+                centerMode: true,
                 slidesToShow: 1,
             }
 
         }
         ]
-
-         
     });
 });
 
@@ -82,6 +97,185 @@ jQuery(document).ready(function ($) {
         return false;
     });
 
+
+	$("#slider-range").slider({
+    range: true,
+    min: 0,
+    max: 1440,
+    step: 1,
+    values: [600, 1440],
+    slide: function (e, ui) {
+        var hours1 = Math.floor(ui.values[0] / 60);
+        var minutes1 = ui.values[0] - (hours1 * 60);
+
+        if (hours1.length == 1) hours1 = '0' + hours1;
+        if (minutes1.length == 1) minutes1 = '0' + minutes1;
+        if (minutes1 == 0) minutes1 = '00';
+        if (hours1 >= 24) {
+            if (hours1 == 24) {
+                hours1 = hours1;
+                minutes1 = minutes1 + " ";
+            } else {
+                hours1 = hours1 - 24;
+                minutes1 = minutes1 + " ";
+            }
+        } else {
+            hours1 = hours1;
+            minutes1 = minutes1 + " ";
+        }
+        if (hours1 == 0) {
+            hours1 = 00;
+            minutes1 = minutes1;
+        }
+
+
+
+        $('.slider-time').html(hours1 + ':' + minutes1);
+
+        var hours2 = Math.floor(ui.values[1] / 60);
+        var minutes2 = ui.values[1] - (hours2 * 60);
+
+        if (hours2.length == 1) hours2 = '0' + hours2;
+        if (minutes2.length == 1) minutes2 = '0' + minutes2;
+        if (minutes2 == 0) minutes2 = '59';
+        if (hours2 >= 23) {
+            if (hours2 == 23) {
+                hours2 = hours2;
+                minutes2 = minutes2 + " ";
+            } else if (hours2 == 23) {
+                hours2 = 23;
+                minutes2 = "59 ";
+            } else {
+                hours2 = hours2 - 1;
+                minutes2 = minutes2 + " ";
+            }
+        } else {
+            hours2 = hours2;
+            minutes2 = minutes2 + " ";
+        }
+
+        $('.slider-time2').html(hours2 + ':' + minutes2);
+    }
+});
+
+	$("#slider-range2").slider({
+    range: true,
+    min: 0,
+    max: 1440,
+    step: 15,
+    values: [600, 1440],
+    slide: function (e, ui) {
+        var hours1 = Math.floor(ui.values[0] / 60);
+        var minutes1 = ui.values[0] - (hours1 * 60);
+
+        if (hours1.length == 1) hours1 = '0' + hours1;
+        if (minutes1.length == 1) minutes1 = '0' + minutes1;
+        if (minutes1 == 0) minutes1 = '00';
+        if (hours1 >= 24) {
+            if (hours1 == 24) {
+                hours1 = hours1;
+                minutes1 = minutes1 + " ";
+            } else {
+                hours1 = hours1 - 24;
+                minutes1 = minutes1 + " ";
+            }
+        } else {
+            hours1 = hours1;
+            minutes1 = minutes1 + " ";
+        }
+        if (hours1 == 0) {
+            hours1 = 00;
+            minutes1 = minutes1;
+        }
+
+
+
+        $('.slider-time3').html(hours1 + ':' + minutes1);
+
+        var hours2 = Math.floor(ui.values[1] / 60);
+        var minutes2 = ui.values[1] - (hours2 * 60);
+
+        if (hours2.length == 1) hours2 = '0' + hours2;
+        if (minutes2.length == 1) minutes2 = '0' + minutes2;
+        if (minutes2 == 0) minutes2 = '59';
+        if (hours2 >= 23) {
+            if (hours2 == 23) {
+                hours2 = hours2;
+                minutes2 = minutes2 + " ";
+            } else if (hours2 == 23) {
+                hours2 = 23;
+                minutes2 = "59 ";
+            } else {
+                hours2 = hours2 - 1;
+                minutes2 = minutes2 + " ";
+            }
+        } else {
+            hours2 = hours2;
+            minutes2 = minutes2 + " ";
+        }
+
+        $('.slider-time4').html(hours2 + ':' + minutes2);
+    }
+});
+	$("#slider-range3").slider({
+    range: true,
+    min: 0,
+    max: 1440,
+    step: 15,
+    values: [600, 1440],
+    slide: function (e, ui) {
+        var hours1 = Math.floor(ui.values[0] / 60);
+        var minutes1 = ui.values[0] - (hours1 * 60);
+
+        if (hours1.length == 1) hours1 = '0' + hours1;
+        if (minutes1.length == 1) minutes1 = '0' + minutes1;
+        if (minutes1 == 0) minutes1 = '00';
+        if (hours1 >= 24) {
+            if (hours1 == 24) {
+                hours1 = hours1;
+                minutes1 = minutes1 + " ";
+            } else {
+                hours1 = hours1 - 24;
+                minutes1 = minutes1 + " ";
+            }
+        } else {
+            hours1 = hours1;
+            minutes1 = minutes1 + " ";
+        }
+        if (hours1 == 0) {
+            hours1 = 00;
+            minutes1 = minutes1;
+        }
+
+
+
+        $('.slider-time5').html(hours1 + ':' + minutes1);
+
+        var hours2 = Math.floor(ui.values[1] / 60);
+        var minutes2 = ui.values[1] - (hours2 * 60);
+
+        if (hours2.length == 1) hours2 = '0' + hours2;
+        if (minutes2.length == 1) minutes2 = '0' + minutes2;
+        if (minutes2 == 0) minutes2 = '59';
+        if (hours2 >= 23) {
+            if (hours2 == 23) {
+                hours2 = hours2;
+                minutes2 = minutes2 + " ";
+            } else if (hours2 == 23) {
+                hours2 = 23;
+                minutes2 = "59 ";
+            } else {
+                hours2 = hours2 - 1;
+                minutes2 = minutes2 + " ";
+            }
+        } else {
+            hours2 = hours2;
+            minutes2 = minutes2 + " ";
+        }
+
+        $('.slider-time6').html(hours2 + ':' + minutes2);
+    }
+});
 });
 $(document).ready(function() {
      var menu = document.querySelector(".m_menu");
@@ -180,22 +374,37 @@ jQuery(function($){
 
 
 
-$(function() {
-  $('.date_range').datepicker({
-    range: 'period', // режим - выбор периода
-    numberOfMonths: 2,
-    onSelect: function(dateText, inst, extensionRange) {
-    	// extensionRange - объект расширения
-      $('[name=startDate]').val(extensionRange.startDateText);
-      $('[name=endDate]').val(extensionRange.endDateText);
-    }
-  });
-
-  $('#date_range').datepicker('setDate', ['+4d', '+8d']);
-
-  // объект расширения (хранит состояние календаря)
-  var extensionRange = $('#date_range').datepicker('widget').data('datepickerExtensionRange');
-  if(extensionRange.startDateText) $('[name=startDate]').val(extensionRange.startDateText);
-  if(extensionRange.endDateText) $('[name=endDate]').val(extensionRange.endDateText);
+$(document).ready(function () {
+    $(".menu li.min ").hover(function () { //When trigger is hovered...
+           $('.menu li >.sub_menu_container').css("height","30px");
+         $('.line_top').css("height","15px");
+    },
+	function () {
+          $('.menu li >.sub_menu_container').css("height","105px");
+           $('.menu li.min >.sub_menu_container').css("height","30px");
+        $('.line_top').css("height","83px");
+           
+            if($('.menu li.min').hasClass('active')){
+                $('.line_top').css("display","block");
+                $('.line_top').css("height","15px");
+            }
+                   
+    });
 });
 
+
+$(document).ready(function () {
+    $(".drugoe_vremia ").click(function () { 
+    	if($(this).siblings('.other_item_container').css('display') != 'block'){
+    	$(this).siblings('.other_item_container').animate({height: "show"}  ,"1000");
+    }else{
+    	$(this).siblings('.other_item_container').animate({height: "hide"}  ,"1000");
+    }
+  
+})
+     $('.tabs-header__title').click(function () {
+        var itemCount = $(this).index();
+        $(this).addClass('active').siblings().removeClass('active');
+        $('.tabs-box').find('.tabs-box__item').eq(itemCount).addClass('active').siblings().removeClass('active');
+    });
+});
