@@ -74,8 +74,19 @@ jQuery(document).ready(function ($) {
         }
         ]
     });
+	
+	$(function() {
+  $('#date_range').datepicker({
+    range: 'period', // режим - выбор периода
+    numberOfMonths: 2,
+    onSelect: function(dateText, inst, extensionRange) {
+    	// extensionRange - объект расширения
+      $('[name=startDate]').val(extensionRange.startDateText);
+      $('[name=endDate]').val(extensionRange.endDateText);
+    }
+  });
 });
-
+});
  $(document).ready(function() {
       $('.minus').click(function () {
         var $input = $(this).siblings('.item_count');
